@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
-const fs = express('fs');
-// const cors = require('cors');
+const fs = require('fs');
+const cors = require('cors');
 const app = express();
-// app.use(cors);
+app.use(cors());
 const port = 3000;
 
 app.get('/', (req, res) => {
@@ -22,10 +22,10 @@ app.checkout('/csv-data', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`server is listening on port ${port}`);
-});
-
 app.get('Leo',(req, res) => {
     res.send('wsg gang');
+});
+
+app.listen(port, () => {
+    console.log(`server is listening on port ${port}`);
 });
